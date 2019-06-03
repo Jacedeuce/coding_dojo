@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hover</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('img').hover(
+                function() {
+                    src=$( this ).attr('src')
+                    alt=$( this ).attr('alt-src')
+                    $( this ).attr('src', alt)
+                    $( this ).attr('alt-src', src)
+                }
+                // },
+                // function() {
+                //     src=$( this ).attr('src')
+                //     alt=$( this ).attr('alt-src')
+                //     $( this ).attr('src', alt)
+                //     $( this ).attr('alt-src', src)
+                // }
+            )
+
+
+        })
+    
+    
+    
+    
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Hover In/Out</h1>
+        <div class="images">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+            <img src="ready.jpg" alt-src="dead.jpg" alt="image">
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+
+            $('div.show p.show, p.slideDown, p.fadeIn').hide()
+            //.click
+            $('button.click').click(function(){
+                alert('you clicked the button')
+            })
+            //.hide
+            $('button.hide').click(function(){
+                $('p.hide').hide()
+            })
+            //.show
+            $('button.show').click(function(){
+                $('p.show').show()
+            })
+            //.toggle
+            $('button.toggle').click(function(){
+                $('p.toggle').toggle()
+            })
+            //.slideDown
+            $('button.slideDown').click(function(){
+                $('p.slideDown').slideDown()
+            })
+            //.slideUp
+            $('button.slideUp').click(function(){
+                $('p.slideUp').slideUp()
+            })
+            //.slideToggle
+            $('button.slideToggle').click(function(){
+                $('p.slideToggle').slideToggle()
+            })
+            //.fadeIn
+            $('button.fadeIn').click(function(){
+                $('p.fadeIn').fadeIn()
+            })
+            $('button.fadeOut').click(function(){
+                $('p.fadeOut').fadeOut()
+            }).fadeOut
+            //.addClass
+            $('button.addClass').click(function(){
+                $('p.addClass').addClass('green-text')
+            })
+            //.before
+            $('button.before').click(function(){
+                $('p.before').before('This text goes before.')
+            })
+            //.after
+            $('button.after').click(function(){
+                $('p.after').after('This text goes after.')
+            })
+            //.append
+            $('button.append').click(function(){
+                $('p.append').append(' This text goes at the end.')
+            })
+            //.html (getter)
+            $('button.html').click(function(){
+                alert($('p.html').html())
+            })
+            //.html (setter)
+            $('button.htmlsetter').click(function(){
+                $('p.htmlsetter').html("<strong>Description:</strong> Now we've changed the text")
+            })
+            //.attr (getter)
+            $('button.attr-getter').click(function(){
+                alert('The class of the text is "'+ $('p.attr-getter').attr('class') +'"')
+            })
+            //.attr (setter)
+            $('button.attr-setter').click(function(){
+                $('p.attr-setter').attr('class','container attr-setter green-text')
+                alert("We've reset the class attribute on the <p> tag to include 'green-text'.")
+            })
+            //.val (getter)
+            $('button.val-getter').click(function(){
+                alert($('.val-get').val())
+            })
+            //.val (setter)
+            $('button.val-setter').click(function(){
+                $('.val-set').val("Second Value")
+                alert("We've set the value in the dropdown to 'Second Value'")
+            })
+            //.text (getter)
+            $('button.text-getter').click(function(){
+                alert($('p.text-getter').text())
+            })
+            //.text (setter)
+            $('button.text-setter').click(function(){
+                $('p.text-setter').text("We've changed this text")
+            })
+           
+        })
+        
+
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container click">
+            <h1 class="container">.click()</h1>
+            <button class="container click">Click me!</button>
+            <p class="container click"><strong>Description:</strong> Bind an event handler to the "click" JavaScript event, or trigger that event on an element.</p>
+            <a href="http://api.jquery.com/click/" class="container click">.click Documentation</a>
+        </div>
+        <div class="container hide">
+                <h1 class="container">.hide()</h1>
+                <button class="container hide">Hide the text!</button>
+                <p class="container hide show toggle"><strong>Description:</strong> Hide the matched elements.</p>
+                <a href="http://api.jquery.com/hide/" class="container hide">.hide Documentation</a>
+        </div>
+        <div class="container show">
+                <h1 class="container">.show()</h1>
+                <button class="container show">Show the text!</button>
+                <p class="container hide show toggle"><strong>Description:</strong> Display the matched elements.</p>
+                <a href="http://api.jquery.com/show/" class="container show">.show Documentation</a>
+        </div>
+        <div class="container toggle">
+                <h1 class="container">.toggle()</h1>
+                <button class="container toggle">Toggle the text!</button>
+                <p class="container hide show toggle"><strong>Description:</strong> Display or hide the matched elements.</p>
+                <a href="http://api.jquery.com/toggle/" class="container toggle">.toggle Documentation</a>
+        </div>
+        <div class="container slideDown">
+            <h1 class="container">.slideDown()</h1>
+            <button class="container slideDown">Slide down animation!</button>
+            <p class="container slideDown slideUp slideToggle"><strong>Description:</strong> Display the matched elements with a sliding motion.</p>
+            <a href="http://api.jquery.com/slideDown/" class="container slideDown">.slideDown Documentation</a>
+        </div>
+        <div class="container slideUp">
+            <h1 class="container">.slideUp()</h1>
+            <button class="container slideUp">Slide up animation!</button>
+            <p class="container slideUp slideDown slideToggle"><strong>Description:</strong> Hide the matched elements with a sliding motion.</p>
+            <a href="http://api.jquery.com/slideUp/" class="container slideUp">.slideUp Documentation</a>
+        </div>
+        <div class="container slideToggle">
+            <h1 class="container">.slideToggle()</h1>
+            <button class="container slideToggle">Toggle slide animation!</button>
+            <p class="container slideUp slideDown slideToggle"><strong>Description:</strong> Hide the matched elements with a sliding motion.</p>
+            <a href="http://api.jquery.com/slideToggle/" class="container slideToggle">.slideToggle Documentation</a>
+        </div>
+        <div class="container fadeIn">
+            <h1 class="container">.fadeIn()</h1>
+            <button class="container fadeIn">Fade in animation!</button>
+            <p class="container fadeIn fadeOut"><strong>Description:</strong> Display the matched elements by fading them to opaque.</p>
+            <a href="http://api.jquery.com/fadeIn/" class="container fadeIn">.fadeIn Documentation</a>
+        </div>
+        <div class="container fadeOut">
+            <h1 class="container">.fadeOut()</h1>
+            <button class="container fadeOut">Fade out animation!</button>
+            <p class="container fadeIn fadeOut"><strong>Description:</strong> Hide the matched elements by fading them to transparent.</p>
+            <a href="http://api.jquery.com/fadeOut/" class="container fadeOut">.fadeOut Documentation</a>
+        </div>
+        <div class="container addClass">
+            <h1 class="container">.addClass()</h1>
+            <button class="container addClass">Add the class: green-text!</button>
+            <p class="container addClass"><strong>Description:</strong> Adds the specified class(es) to each element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/addClass/" class="container addClass">.addClass Documentation</a>
+        </div>
+        <div class="container before">
+            <h1 class="container">.before()</h1>
+            <button class="container before">Insert before!</button>
+            <p class="container before"><strong>Description:</strong> Insert content, specified by the parameter, before each element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/before/" class="container before">.before Documentation</a>
+        </div>
+        <div class="container after">
+            <h1 class="container">.after()</h1>
+            <button class="container after">Insert after!</button>
+            <p class="container after"><strong>Description:</strong> Insert content, specified by the parameter, after each element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/after/" class="container after">.after Documentation</a>
+        </div>
+        <div class="container append">
+            <h1 class="container">.append()</h1>
+            <button class="container append">Insert append!</button>
+            <p class="container append"><strong>Description:</strong> Insert content, specified by the parameter, to the end of each element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/append/" class="container append">.append Documentation</a>
+        </div>
+        <div class="container html">
+            <h1 class="container">.html()</h1>
+            <button class="container html">Get html!</button>
+            <p class="container html"><strong>Description:</strong> Get the HTML contents of the first element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/html/" class="container html">.html (getter) Documentation</a>
+        </div>
+        <div class="container htmlsetter">
+            <h1 class="container">.html( htmlString )</h1>
+            <button class="container htmlsetter">Set html!</button>
+            <p class="container htmlsetter"><strong>Description:</strong> Set the HTML contents of each element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/html/#html2" class="container htmlsetter">.html (setter) Documentation</a>
+        </div>
+        <div class="container attr-getter">
+            <h1 class="container">.attr( attributeName)</h1>
+            <button class="container attr-getter">Get attr!</button>
+            <p class="container attr-getter"><strong>Description:</strong> Get the value of an attribute for the first element in the set of matched elements.</p>
+            <a href="http://api.jquery.com/attr/" class="container attr-getter">.attr (getter) Documentation</a>
+        </div>
+        <div class="container attr-setter">
+            <h1 class="container">.attr( attributeName, value)</h1>
+            <button class="container attr-setter">Set attr!</button>
+            <p class="container attr-setter"><strong>Description:</strong> Set one or more attributes for the set of matched elements.</p>
+            <a href="http://api.jquery.com/attr/#attr2" class="container attr-setter">.attr (setter) Documentation</a>
+        </div>
+        <div class="container val-getter">
+            <h1 class="container">.val( valibuteName)</h1>
+            <button class="container val-getter">Get val!</button>
+            <p class="container val-getter"><strong>Description:</strong> Get the current value of the first element in the set of matched elements.</p>
+            <select class="selecter val-get">
+                <option>First Value</option>
+                <option>Second Value</option>
+            </select>
+            <a href="http://api.jquery.com/val/" class="container val-getter">.val (getter) Documentation</a>
+        </div>
+        <div class="container val-setter">
+            <h1 class="container">.val( valibuteName, value)</h1>
+            <button class="container val-setter">Set val!</button>
+            <p class="container val-setter"><strong>Description:</strong> Set the value of each element in the set of matched elements.</p>
+            <select class="selecter val-set">
+                <option>First Value</option>
+                <option>Second Value</option>
+            </select>
+            <a href="http://api.jquery.com/val/#val2" class="container val-setter">.val (setter) Documentation</a>
+        </div>
+        <div class="container text-getter">
+            <h1 class="container">.text()</h1>
+            <button class="container text-getter">Get text!</button>
+            <p class="container text-getter"><strong>Description:</strong> Get the text contents of the first element in the set of matched elements.</p>
+            <p class="container"><strong>Note:</strong> Cannot be used on form inputs, use .val() instead.</p>
+            <a href="http://api.jquery.com/text/" class="container text-getter">.text (getter) Documentation</a>
+        </div>
+        <div class="container text-setter">
+            <h1 class="container">.text( text )</h1>
+            <button class="container text-setter">Set text!</button>
+            <p class="container text-setter"><strong>Description:</strong> Set the content of each element in the set of matched elements to the specified text.</p>
+            <a href="http://api.jquery.com/text/#text2" class="container text-setter">.text (setter) Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

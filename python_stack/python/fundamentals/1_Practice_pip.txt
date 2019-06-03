@@ -1,0 +1,44 @@
+> pip install Django==1.11.9
+
+Installs Django version 1.11.9 and dependencies into py3Env (since it was activated)
+
+> pip list
+
+Lists all the packages installed in the currently active environment (py3Env)
+
+> deactivate
+
+Exits the active environment
+
+> pip list
+
+Lists all the packages installed in the base environment (since we had no virtualenv active)
+
+> ...activate
+
+Activates the environment that the "activate" script is contained within
+
+> pip install Django==1.11.9
+
+Notifies the user that the package and dependencies are already installed and prints the version and 
+installation path
+
+> pip freeze
+
+Prints the packages (and versions) that have been installed by the user in the currently active environment
+
+> pip freeze > requirements.txt
+
+Prints the output of pip freeze to a text file. This is used to document the dependencies required for a project.
+
+> pip uninstall Django
+
+removes Django and unused dependencies from the active environment
+
+> pip show Django
+
+returns nothing since we just uninstalled it.
+
+> pip search Flask
+
+Prints the packages in the PyPI repo that contain the word "Flask"

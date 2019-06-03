@@ -1,0 +1,22 @@
+SELECT follower.follower_name, followed.followed_name, followed.id
+FROM (
+	SELECT follows.id, CONCAT(users.first_name, ' ', users.last_name) AS 'follower_name', follower_id 
+	FROM follows
+	JOIN users on follows.follower_id = users.id) follower
+JOIN (
+	SELECT follows.id, CONCAT(' ', users.first_name, ' ',users.last_name) AS 'followed_name', followed_id 
+	FROM follows
+	JOIN users on follows.followed_id = users.id) followed
+ON follower.id = followed.id
+
+INSERT INTO users (first_name, last_name, handle, created_at, updated_at)
+VALUES ('Jason', 'Hanna', 'jdhanna', NOW(), NOW())
+
+SELECT * FROM users 
+WHERE first_name = 'Jason';
+
+UPDATE users
+SET birthday = '1983-04-02'
+WHERE id = 6
+
+DELETE FROM users WHERE id = 6
