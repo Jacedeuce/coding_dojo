@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Playground</title>
+    <style>
+    .wrapper {
+        width: 900px;
+        min-height: 250px;
+        margin: auto;
+        background-color: lightslategray;
+        text-align: center;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: {{box_color}};
+        border: 2px solid darkslategrey;
+        display: inline-block;
+    }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <h1>Blue Boxes</h1>
+        {% for i in range(0,repeat): %}
+            <div class="box"></div>
+        {% endfor %}
+
+    </div>
+    
+</body>
+</html>
