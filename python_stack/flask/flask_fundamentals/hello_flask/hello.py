@@ -19,6 +19,5 @@ def show_user_profile(username, id):
     print(id)
     return "username: " + username + ", id: " + id
 
-
 if __name__=="__main__":
     app.run(debug=True)
