@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Hello Flask</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type = 'text/javascript' src="{{ url_for('static', filename = 'js/my_script.js') }}"></script>
 </head>
 <body>
-    <h3>My Flask Template</h3>
+    <h1>My Flask Template</h1>
     <p>Phrase: {{ phrase }}</p>
     <p>Times: {{ times }}</p>
         
