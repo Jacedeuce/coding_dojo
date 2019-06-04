@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    border: 0;
+    /* outline: 1px solid orange; */
+}
+
+.header {
+    margin: auto;
+    text-align: center;
+}
+
+.wrapper {
+    min-width: 1000 px;
+    min-height: 500px;
+    background-color: aquamarine;
+    margin: auto;
+    font-size: 0;
+    text-align: center;
+}
+
+.square { 
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    /* outline: 1px solid black; */
+}
+
+/* .color_1 {
+    background-color: {{color_1}};
+}
+
+.color_2 {
+    background-color: black;
+} */
