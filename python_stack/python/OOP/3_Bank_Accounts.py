@@ -22,8 +22,9 @@ class BankAccount:
         self.bal = self.bal + self.bal * self.int_rate
         return self
 
-account1 = BankAccount("Account 1", .05, 100)
-account2 = BankAccount("Account 2", .10, 50)
+if __name__ == "__main__":
+    account1 = BankAccount("Account 1", .05, 100)
+    account2 = BankAccount("Account 2", .10, 50)
 
-account1.deposit(100).deposit(100).deposit(100).withdraw(200).yield_interest().display_account_info()
-account2.deposit(200).deposit(200).withdraw(50).withdraw(50).withdraw(50).withdraw(50).yield_interest().display_account_info()
+    account1.deposit(100).deposit(100).deposit(100).withdraw(200).yield_interest().display_account_info()
+    account2.deposit(200).deposit(200).withdraw(50).withdraw(50).withdraw(50).withdraw(50).yield_interest().display_account_info()
