@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/users-styles.css')}}">
+    <title>Users Table</title>
+</head>
+<body>
+    <h1>Users Table</h1>
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                {% for key in user_list[0].keys(): %}
+                    <th>{{key}}</th>
+                {% endfor %}
+            </tr>
+            {% for row in user_list %}
+                <tr>
+                {% for value in row.values() %}
+                    <td>{{value}}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>
