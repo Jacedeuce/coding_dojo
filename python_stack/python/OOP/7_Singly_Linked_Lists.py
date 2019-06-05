@@ -67,7 +67,7 @@ class SList:
             new_node.next = node
             return self
         next_node = node.next
-        for i in range(0, pos): # traverse list elements
+        for i in range(0, pos-1): # traverse list elements
             if next_node == None:
                 node.next = new_node
                 return self
@@ -88,10 +88,11 @@ singlelist.add_to_front(10).add_to_front(9).add_to_front(8).add_to_front(7).add_
 
 
 singlelist.insert_at(-1, 0)
-singlelist.insert_at(100, 45)
+singlelist.insert_at(100, 9)
 singlelist.insert_at(99, 5)
-singlelist.print_values()
+
 print()
+singlelist.print_values()
 
 # # singlelist.print_values()
 # singlelist.add_to_back(11)
