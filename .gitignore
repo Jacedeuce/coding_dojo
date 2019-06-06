@@ -9,6 +9,7 @@ python_stack/my_environments
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages #
 ############
