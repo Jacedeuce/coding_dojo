@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Money</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <h1>Your ninja needs some gold...</h1>
+            <p>Find some!</p>
+            <div class="gold-counter">
+                <h3>Your Gold:</h3>
+                <p>{{ gold_amount }}</p>
+                <!--Need to fill variable-->
+            </div>
+        </div>
+        <div class="main">
+            <div class="row">
+                <div class="column">
+                    <h2>Farm</h2>
+                    <p>(Earns 10-20 Gold)</p>
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="farm" />
+                        <input type="submit" class="button" value="Find Gold!" />
+                    </form>
+                </div>
+                <div class="column">
+                    <h2>Cave</h2>
+                    <p>(Earns 5-10 Gold)</p>
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="cave" />
+                        <input type="submit" class="button" value="Find Gold!" />
+                    </form>
+                </div>
+                <div class="column">
+                    <h2>House</h2>
+                    <p>(Earns 2-5 Gold)</p>
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="house" />
+                        <input type="submit" class="button" value="Find Gold!" />
+                    </form>
+                </div>
+                <div class="column">
+                    <h2>Casino</h2>
+                    <p>(Earns/loses 0-50 Gold)</p>
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="casino" />
+                        <input type="submit" class="button" value="Find Gold!" />
+                    </form>
+                </div>
+            </div>
+            {% if win_lose == 'won': %}
+            <div class="endgame won">
+                <div class="movedown">
+                    <h1>You {{win_lose}}!</h1>
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="clear" />
+                        <input type="submit" class="button" value="Start Over" />
+                    </form>
+                </div>
+            </div>
+            {% elif win_lose == 'lost': %}
+            <div class="endgame lost">
+                <div class="movedown">
+                    <h1>You {{win_lose}}!</h1>
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="clear" />
+                        <input type="submit" class="button" value="Start Over" />
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="activity">
+            <ul>
+                {% if list_len > 0: %}
+                {% for item in activity_list: %}
+                <li class="{{ item['color'] }}">Your ninja {{ item['win_lose'] }} {{ item['amount'] }} gold at
+                    {{ item['time'] }}</li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
