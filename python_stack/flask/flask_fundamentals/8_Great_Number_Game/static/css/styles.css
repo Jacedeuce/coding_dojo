@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.message {
+    width: 600px;
+    min-height: 400px;
+    margin: auto;
+    outline: 1px solid black;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.guess-wrapper {
+    width: 600px;
+    /* min-height: 200px; */
+    margin: auto;
+    margin-top: 50px;
+}
+
+.guess {
+    display: inline-block;
+}
+
+.text-align {
+    text-align: center;
+}

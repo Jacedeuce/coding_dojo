@@ -76,7 +76,18 @@ class SList:
         new_node.next = next_node
         return self
 
+    # def is_loop(self):
+    #     walker = self.head
+    #     while walker.next != None:
+    #         jogger = walker.next
+    #         runner = walker.next.next
+# https://en.wikipedia.org/wiki/Cycle_detection
 
+
+    #         jogger = jogger.next
+    #         for i in range(2):
+    #             runner == jogger
+    #             runner = runner.next
 
 class SLNode:
     def __init__(self, val):
