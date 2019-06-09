@@ -29,6 +29,7 @@ python_stack/my_environments
 *.log
 *.sql
 *.sqlite
+*.sqlite3
 
 # OS generated files #
 ######################
