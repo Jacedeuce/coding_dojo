@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    text-align: center;
+    margin:auto;
+}
+
+.wrapper h1 {
+    width: 200px;
+    height: 100px;
+    /* outline: 1px solid black; */
+    margin: 50px auto;
+    line-height: 50px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 15%;
+}
+
+.wrapper p {
+    width: 400px;
+    height: 200px;
+    /* outline: 1px solid black; */
+    margin: auto;
+    line-height: 200px;
+    font-size: 24px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 15%;
+}
