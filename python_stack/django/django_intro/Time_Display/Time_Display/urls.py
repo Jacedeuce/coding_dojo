@@ -18,5 +18,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^', include('apps.app_Time.urls')),
+    url(r'^random_word', include('apps.Random_Word_Generator.urls'))
     #url(r'^admin/', admin.site.urls),
 ]

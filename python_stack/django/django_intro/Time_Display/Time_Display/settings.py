@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.app_Time',
+    'apps.Random_Word_Generator',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
