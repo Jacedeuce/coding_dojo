@@ -20,7 +20,9 @@
 <body>
     <div class="message">
         <h1>Leaderboard</h1>
-        <p>{{ leader_dict.items() }}</p>
+        {% for leader in leader_dict: %}
+        <p>{{leader['name']}} : {{leader['guess']}}</p>
+        {% endfor %}
 
     </div>
 

@@ -14,8 +14,9 @@ guesses_left = 5
 @app.route("/")
 def index():
     session['guessed_nums'] = []
-    session['leaderboard'] = {}
     session['num'] = 3 #randint(0, 100)
+    if 'leaderboard' not in session:
+        session['leaderboard'] = []
     return render_template("index.html", num = session['num'], 
                                         guesses_left = guesses_left)
 
@@ -60,15 +61,25 @@ def number_guess():
 @app.route("/win_name", methods = ['POST'])
 def win_name():
     print(request.form['winner_name'])
-    session['leaderboard'][request.form['winner_name']] = session['total_guesses']
+    name = request.form['winner_name']
+    guess = session['total_guesses']
+    new_leader = createLeader(name, guess)
+    session['leaderboard'].append(new_leader)
     print(session)
     return redirect("/leaderboard")
 
 @app.route("/leaderboard")
 def leaderboard():
-    leader_dict = session['leaderboard']
     print(session)
+    leader_dict = []
+    leader_dict = session['leaderboard']
     return render_template("leaderboard.html", leader_dict = leader_dict)
+
+def createLeader(name, guess):
+    return {
+        "name": name,
+        "guess": guess
+    }
 
 if __name__=="__main__":
     app.run(debug=True)
