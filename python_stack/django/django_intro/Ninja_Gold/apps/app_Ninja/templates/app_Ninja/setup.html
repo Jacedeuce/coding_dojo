@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold Setup</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/" method="post">
+            {% csrf_token %}
+            <label for="goal-input">How much gold should your ninja need to win?</label>
+            <input type="number" name="goal" id="goal-input">
+            <label for="turn-input">How many turns will you allow your ninja?</label>
+            <input type="number" name="turns_allowed" id="turn-input">
+            <input type="submit" value="Start the Game">
+        </form>
+    </div>
+</body>
+</html>
