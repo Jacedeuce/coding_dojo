@@ -40,34 +40,33 @@ def index(request):
 
     return render(request, "app_Ninja/index.html", context)
 
-def process_money(request):
-    if request.method == "POST":
-        if request.POST['building'] == 'clear':
-            request.session.flush()
-            return redirect('/')
-        else: 
-            pass
-
-        gold_val = gold_randomizer(request.POST['building'])
-        request.session['gold'] += gold_val
-
-        if gold_val > 0:
-            color = 'green'
-            win_lose = "won"
-        elif gold_val == 0:
-            color = 'yellow'
-            win_lose = "won"
-        else:
-            color = 'red'
-            win_lose = "lost"
-
-        request.session['activity'].append({'color': color,
-                                    'win_lose': win_lose,
-                                    'amount': gold_val, 
-                                    'time': str(datetime.now())})
-        
-        # if gold_val > request.session['goal']
+def process_money(request, building):
+    if building == 'clear':
+        request.session.flush()
         return redirect('/')
+    else: 
+        pass
+
+    gold_val = gold_randomizer(building)
+    request.session['gold'] += gold_val
+
+    if gold_val > 0:
+        color = 'green'
+        win_lose = "won"
+    elif gold_val == 0:
+        color = 'yellow'
+        win_lose = "won"
+    else:
+        color = 'red'
+        win_lose = "lost"
+
+    request.session['activity'].append({'color': color,
+                                'win_lose': win_lose,
+                                'amount': gold_val, 
+                                'time': str(datetime.now())})
+    
+    # if gold_val > request.session['goal']
+    return redirect('/')
 
 def setup(request):
 
