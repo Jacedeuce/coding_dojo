@@ -1,0 +1,27 @@
+first_name
+last_name
+email
+age
+created_at
+updated_at
+
+jason = Users.objects.create(first_name="Jason",last_name="Hanna",email_address="jdhanna@gmail.com",age=36)
+christine = Users.objects.create(first_name="Christine",last_name="Hanna",email_address="hanna.l.chris@gmail.com",age=34)
+josie = Users.objects.create(first_name="Josie",last_name="Crook",email_address="",age=1)
+
+Users.objects.all()
+
+Users.objects.last()
+
+Users.objects.first()
+
+j = Users.objects.get(id=3)
+j.last_name = "Pancakes"
+j.save()
+
+c = Users.objects.get(id=2) 
+c.delete()
+
+Users.objects.all().order_by("first_name")
+
+Users.objects.all().order_by("-first_name")
