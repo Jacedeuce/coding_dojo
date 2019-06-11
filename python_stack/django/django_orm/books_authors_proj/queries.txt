@@ -1,0 +1,61 @@
+from apps.books_authors_app.models import Books, Authors
+
+class Books(models.Model):
+    title = models.CharField(max_length=90)
+    desc = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Authors(models.Model):
+    first_name = models.CharField(max_length=45)
+    last_name = models.CharField(max_length=45)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True
+
+
+Book.objects.create(title="C Sharp", desc="")
+Book.objects.create(title="Java", desc="")
+Book.objects.create(title="Python", desc="")
+Book.objects.create(title="PHP", desc="")
+Book.objects.create(title="Ruby", desc="")
+
+Author.objects.create(first_name="Jane" , last_name="Austen")
+Author.objects.create(first_name="Emily" , last_name="Dickinson")
+Author.objects.create(first_name="Fyodor" , last_name="Dostoevsky")
+Author.objects.create(first_name="William" , last_name="Shakespeare")
+Author.objects.create(first_name="Lau" , last_name="Tzu")
+
+c=Book.objects.get(title="C Sharp")
+c.title = "C#"
+c.save()
+
+b=Author.objects.get(id=4)
+b.first_name = "Bill"
+b.save()
+
+first_author = Author.objects.get(id=1)
+second_author = Author.objects.get(id=2)
+third_author = Author.objects.get(id=3)
+fourth_author = Author.objects.get(id=4)
+fifth_author = Author.objects.get(id=5)
+
+first_book = Book.objects.get(id=1
+second_book = Book.objects.get(id=2)
+third_book = Book.objects.get(id=3)
+fourth_book = Book.objects.get(id=4)
+fifth_book = Book.objects.get(id=5)
+
+first_author.books.add(first_book, second_book)
+second_author.books.add(first_book, second_book, third_book)
+third_author.books.add(first_book, second_book, third_book, fourth_book)
+fourth_author.books.add(first_book, second_book, third_book, fourth_book, fifth_book)
+
+third_book.authors.all()
+
+third_book.authors.remove(second_author)
+
+second_book.authors.add(fifth_author)
+
+third_author.books.all()
+
+fifth_book.authors.all()
