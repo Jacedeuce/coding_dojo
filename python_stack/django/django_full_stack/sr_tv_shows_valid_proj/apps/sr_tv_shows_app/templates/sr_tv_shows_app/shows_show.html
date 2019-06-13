@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sr_tv_shows_app/css/styles_show.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>TV Show {{ id }}</h1>
+        <a href="/shows" class="back">Go Back</a>
+    </div>
+    <div class="infobox">
+        <ul>
+            <li>
+                <span class="label">Title:</span> 
+                <span class="right">{{ title }}</span>
+            </li>
+            <li>
+                <span class="label">Network:</span>
+                <span class="right">{{ network }}</span>
+            </li>
+            <li>
+                <span class="label">Release Date:</span>
+                <span class="right">{{ release_date }}</span>
+            </li>
+            <li>
+                <div class="description">
+                    <span class="label">Description:</span>
+                    <span>{{ desc }}</span>
+                </div>
+            </li>
+            <li>
+                <span class="label">Last Updated:</span>
+                <span class="right">{{ updated_at }}</span>
+            </li>
+            <li>
+                <p><a href="/shows/{{ id }}/edit">Edit</a> | <a href="/shows/{{ id }}/destroy">Delete</a></p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
