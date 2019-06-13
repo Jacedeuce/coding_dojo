@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    display: inline-block;
+}
+
+.back {
+    float: right;
+    vertical-align: top;
+}
+.infobox {
+    width: 66%;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    line-height: 1.5;
+    font-size: 16px;
+    background-color: lightgrey;
+    border: 1px solid darkgrey;
+    padding: 5px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.right {
+    float: right;
+    clear: right;
+}

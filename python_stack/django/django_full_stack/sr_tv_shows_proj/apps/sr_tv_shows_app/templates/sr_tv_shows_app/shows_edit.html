@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Show {{ id }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sr_tv_shows_app/css/styles_new.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Add a New Show</h1>
+            <a href="/shows">Go Back</a>
+        </div>
+        <div class="container">
+            <form action="/shows/{{ id }}/update" method='post'>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input-title" class="">Title</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="form_title" id="input-title" value="{{ title }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input-network" class="">Network</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="form_network" id="input-network" value="{{ network }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input-date" class="">Release Date</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name="form_date" id="input-date" value='{{ release_date }}'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="input-desc">Description</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea name="form_description" id="input-desc" cols="30" rows="10">{{ desc }}</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Update">
+                </div>
+            </form>
+            <a href="/shows/{{ id }}">Go to Show</a>
+        </div>
+    </div>
+</body>
+</html>
