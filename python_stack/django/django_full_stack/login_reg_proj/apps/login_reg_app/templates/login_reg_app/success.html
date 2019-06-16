@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logged In!</title>
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <h1>Login Successful!</h1>
+        <p>Welcome to your homepage, {{ username }}.</p>
+        <img src="{% static '/login_reg_app/img/cookie.gif'%}" alt="cookie">
+    </div>
+    <div class="right">
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
