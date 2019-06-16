@@ -22,7 +22,6 @@
         <h1>{{ message }}</h1>
         <p>The number was {{ session['num'] }}</p>
         <p>You guessed {{ total_guesses }} numbers.</p>
-        <a class="button" href="/">Play Again!</a>
 
         {% if message == "Winner!": %}
         <div class="text-align">
@@ -33,7 +32,7 @@
                         <label>Record your name on the Leaderboard!
                             <input type="text" name="winner_name" placeholder="winner's name">
                         </label>
-                        <input type="submit" class = "button" value="Submit">
+                        <input type="submit" class = "button" value="Play Again!">
                     </div>
                 </div>
             </div>
