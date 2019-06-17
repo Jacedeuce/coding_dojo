@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'the_wall_app/css/wall_styles.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar">
+            <span class="title">The Wall</span>
+            <div class="right">
+                <span class="welcome"> Welcome {{username}}!</span>
+                <a href="/logout">log off</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="page_messages">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="message-form">
+            <form action="/the_wall/add_message" method='POST'>
+                {% csrf_token %}
+                <label for="message_text">Post a message:</label>
+                <textarea name="message_text" placeholder="Type your message..."></textarea>
+                <button class="message-button" type="submit">Post a message</button>
+            </form>
+        </div>
+        {% for user_message in user_messages %}
+        <div class="message-container">
+            <h3>{{user_message.user.first_name}} {{user_message.user.last_name}} - {{user_message.created_at}}</h3>
+            <p>{{user_message.message}}</p>
+            {% if user_message.created_at > time_for_del %}
+                <a href="/the_wall/del_message/{{user_message.id}}">Delete</a>
+            {% endif %}
+            {% for message_comment in user_message.comment_set.all %}
+            <div class="comment-container">
+                <h3>{{message_comment.user.first_name}} {{message_comment.user.last_name}} -
+                    {{message_comment.created_at}}</h3>
+                <span>{{message_comment.comment}}</span>
+            </div>
+            {% endfor %}
+            <div class="comment-form">
+                <form action="/the_wall/add_comment" method='POST'>
+                    {% csrf_token %}
+                    <label for="comment_text">Post a comment:</label>
+                    <textarea name="comment_text" placeholder="Type your comment..."></textarea>
+                    <input type="hidden" name="user_message_id" value={{user_message.id}}>
+                    <button class="comment-button" type="submit">Post a comment
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
