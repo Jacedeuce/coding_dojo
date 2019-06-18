@@ -89,13 +89,3 @@ class User(BaseModel):
             self.password = bcrypt.hashpw(pw.encode(), bcrypt.gensalt())
         except:
             raise Exception("Password not hashed")
-            
-        # Carver325@ameritech.net - greghanna
-        
-    
-    # def validate_login(request):
-    #     user = User.objects.get(email=request.POST['email'])  # hm...is it really a good idea to use the get method here?
-    #     if bcrypt.checkpw(request.POST['password'].encode(), user.pw_hash.encode()):
-    #         print("password match")
-    #     else:
-    #         print("failed password")
