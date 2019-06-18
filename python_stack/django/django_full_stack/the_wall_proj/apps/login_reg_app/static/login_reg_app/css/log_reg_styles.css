@@ -33,7 +33,7 @@ input[type=text], input[type=password] /*, input[type=email]*/ {
 
 
 input[type=text]:focus, input[type=password]:focus /*i, input[type=email]:focus */{
-    background-color: #ddd;
+    background-color: #cae9ff;
     outline: none;
 }
 
@@ -43,7 +43,7 @@ hr {
 }
 
 .registerbtn {
-    background-color: #4CAF50;
+    background-color: #5fa8d3;
     color: white;
     padding: 15px 20px;
     margin: 8px 0;
