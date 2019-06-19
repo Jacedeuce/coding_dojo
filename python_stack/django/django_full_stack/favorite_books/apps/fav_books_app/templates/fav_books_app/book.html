@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col">
+        <div class="addbook"> 
+            <h3>Add a Favorite Book</h3>
+            <form action="/add_book" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="title">Title</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="row">
+                    <label for="description">Description</label>
+                    <textarea name="desc" cols="30" rows="10"></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="submit">Add Book</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <div class="col">
+        <div class="all-books">
+            <h3>All Books</h3>
+            <!--https://stackoverflow.com/questions/5674968/django-query-to-get-users-favorite-posts-->
+            {% with user.favorites.all as favorite_books %}
+                {% for book in books %}
+                    <div class="book-container">
+                        <div><a href="/books/{{ book.id }}">{{ book.title }}</a><div>
+                        <p>{{ book.desc }}</p>
+                        {% if book not in favorite_books %}
+                        <div><a href="/add_favorite/{{ book.id }}">Add to your favorites</a><div>
+                        {% else %}
+                        <div><span class="bold">One of your favorites</span><div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

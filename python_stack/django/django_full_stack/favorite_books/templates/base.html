@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type = 'text/css' href="{% static 'css/base_styles.css' %}">
+</head>
+<body>
+    <div class="page-header">
+        <span class="left">Welcome {{ user.first_name }}!</span>
+        <a class="right" href="/accounts/logout">Log Out</a>
+        <a class="right" href="/books/">Home</a>
+    </div>
+    <div class="messages">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div class="content container">
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
