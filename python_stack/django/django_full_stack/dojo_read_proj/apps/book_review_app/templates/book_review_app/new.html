@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a new book and Review{% endblock %}
+
+{% block home %}
+    <a class="right" href="/books/">Home</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper">
+    <h1>Add a New Book Title and a Review</h1>
+    <form action="/books/create" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <label for="title">Book Title:</label>
+            <input type="text" name="title">
+        </div>
+        <div class="row">
+            <div class="row">
+                <label for="author_pick">Choose from the list</label>
+                <select name="author_pick">
+                    <option disabled selected value> -- select an option -- </option>
+                    {% for author in authors %}
+                        <option value="{{ author.id }}">{{ author.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="row">
+                <label for="author_add">Or add a new author:</label>
+                <input type="text" name="author_add">
+            </div>
+        </div>
+        <div class="row">
+            <label for="review">Review:</label>
+            <textarea name="review" cols="30" rows="10"></textarea>
+        </div>
+        <div class="row">
+            <label for="rating">Rating:</label>
+            <select name="rating">
+                {% for i in rating_range %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="right-button">
+            <button type="submit">Add Book and Review</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

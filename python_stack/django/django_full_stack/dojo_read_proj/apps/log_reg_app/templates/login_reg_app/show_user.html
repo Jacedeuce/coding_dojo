@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}{{book.title}}{% endblock %}
+
+{% block home %}
+    <a class="right" href="/books/">Home</a>
+{% endblock %}
+{% block add_book_review %}
+    <a class="right" href="/books/new">Add Book and Review</a>
+{% endblock %}
+{% block content %}
+    <div class="wrapper">
+        <div class="block">
+            <h1>User Alias: {{ user.first_name }}</h1>
+            <h2>Name: {{ user.first_name }} {{ user.last_name }}</h2>
+            <h2>Email: {{ user.email }}</h2>
+            <h2>Reviews: {{ user.reviews.count }}</h2>
+        </div>
+        <div class="block">
+            <h2>Posted reviews on the following books:</h2>
+            <ul>
+            {% for book in booklist %}
+                <li><a href="/books/{{ book.id }}"><h3>{{ book.title }}</h3></a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

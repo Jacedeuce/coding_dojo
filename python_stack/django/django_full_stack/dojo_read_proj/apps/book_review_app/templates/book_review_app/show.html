@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}{{book.title}}{% endblock %}
+
+{% block home %}
+    <a class="right" href="/books/">Home</a>
+{% endblock %}
+
+{% block content %}
+    <div class="col">
+        <h1>{{ book.title }}</h1>
+        <h3>{{ book.author.name }}</h3>
+        <div class="list">
+            <h2>Reviews:</h2>
+            {% for review in book.reviews.all %}
+            <hr>
+            <div class="row">
+                <span>Rating:</span>
+                <span>{{ review.rating }}</span>
+            </div>
+            <div class="row">
+                <a href="/users/{{ review.writer.id }}">{{ review.writer.first_name }}</a>
+                <span>says:</span>
+                <span>{{ review.review }}</span>
+            </div>
+            <div class="row">
+                <span>Posted on: </span>
+                <span>{{ review.created_at }}</span>
+            </div>
+            {% if request.session.userid == review.writer.id %}
+                <a href="/books/review_delete/{{ review.id }}">Delete this Review</a>
+            {% endif %}
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+    <div class="col">
+        <form action="/books/{{book.id}}/new_review" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <label for="review">Review:</label>
+                <textarea name="review" cols="30" rows="10"></textarea>
+            </div>
+            <div class="row">
+                <label for="rating">Rating:</label>
+                <select name="rating">
+                    {% for i in rating_range %}
+                    <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="right-button">
+                <button type="submit">Add Review</button>
+            </div>
+        </form>
+
+    </div>
+
+{% endblock %}

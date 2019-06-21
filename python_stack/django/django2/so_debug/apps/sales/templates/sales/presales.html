@@ -1,0 +1,28 @@
+<form action="/sales/presales_total" method="post">
+    {% csrf_token %}
+<div class="field">
+    <div class="control">
+        <input class="input" name="hours" id="hours" placeholder="Hours">
+    </div>
+</div>
+<label class="label">Engineer Level:</label>
+<div class="field">
+    <div class="select">
+        <select name="selected_engineer_level" id="selected_engineer_level">
+            <option value="">Engineer Level</option>
+            <option value="PM">PM</option>
+            <option value="Solutions Technician">Solutions Technician</option>
+            <option value="Solutions Engineer">Solutions Engineer</option>
+            <option value="Senior Solutions Engineer">Senior Solutions Engineer</option>
+            <option value="Solutions Architect">Solutions Architect</option>
+        </select>
+    </div>
+</div>
+</div>
+<div class="field">
+<div class="control">
+    <button class="button is-info" type="submit">Add Task</button>
+</div>
+</div>
+<span class="label is-medium is-pulled-right">Total: {{ request.session.total }}</span>
+</form>

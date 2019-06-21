@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block add_book_review %}
+    <a class="right" href="/books/new">Add Book and Review</a>
+{% endblock %}
+
+<!-- {% block home %}
+    <a class="right" href="/books/">Home</a>
+{% endblock %} -->
+
+{% block content %}
+<div class="col">
+    <h1>Recent Book Reviews:</h1>
+    {% for review in reviews %}
+        <div class="row">
+            <a href="/books/{{ review.book.id }}"><h3>{{ review.book.title }}</h3></a>
+            <div class="row">
+                <span>Rating:</span>
+                <span>{{ review.rating }}</span>
+            </div>
+            <div class="row">
+                <a href="/users/{{ review.writer.id }}">{{ review.writer.first_name }}</a>
+                <span>says:</span>
+                <span>{{ review.review }}</span>
+            </div>
+            <div class="row">
+                <span>Posted on: </span>
+                <span>{{ review.created_at }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="col">
+    <h1>Other Books with Reviews:</h1>
+    <div class="vert-scroll">
+        <ul>
+        {% for book in books %}
+            <li><a href="/books/{{ book.id }}">{{ book.title }}</a></li>
+        {% endfor %}
+        </ul>   
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
