@@ -17,6 +17,7 @@
                 if (passed_direction) {
                     player.location = passed_direction
                     console.log("You are now at " + player.location.character + "'s house")
+                    player.location.greet()
                 } else {
                     console.log("You may not go that way!")
                 }
