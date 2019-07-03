@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="OOP_game_map.js"></script>
+    <script> 
+        var player = {
+            location: tigger
+        }
+
+        function move(direction) {
+
+            function set_player_location_if_exists(passed_direction) {
+                if (passed_direction) {
+                    player.location = passed_direction
+                    console.log("You are now at " + player.location.character + "'s house")
+                } else {
+                    console.log("You may not go that way!")
+                }
+            }
+            if (direction === "north") {
+                set_player_location_if_exists(player.location.north)
+            } else if (direction === "east") {
+                set_player_location_if_exists(player.location.east)
+            } else if (direction === "south") {
+                set_player_location_if_exists(player.location.south)
+            } else if (direction === "west") {
+                set_player_location_if_exists(player.location.west)
+            }
+        }
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
