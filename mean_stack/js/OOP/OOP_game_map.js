@@ -55,6 +55,8 @@ var tigger = { character: "Tigger",
                                     },
 };
 
+var houses = [eeyore, heffalumps, kanga, owl, christopher_robin, rabbit, gopher, piglet, pooh, tigger]
+
 eeyore.east = heffalumps
 eeyore.south = kanga
 

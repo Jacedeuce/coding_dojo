@@ -8,7 +8,9 @@
     <script src="OOP_game_map.js"></script>
     <script> 
         var player = {
-            location: tigger
+            location: tigger,
+            carrying_honey: false,
+            mission: null
         }
 
         function move(direction) {
@@ -32,7 +34,32 @@
                 set_player_location_if_exists(player.location.west)
             }
         }
-    
+        
+        function pick_up() {
+            if (player.location === bees) {
+                player.carrying_honey = true
+                console.log("The Bees gave you some yummy honey!")
+            } else {
+                console.log("...")
+            }
+        }
+
+        function drop() {
+            if (player.location === player.mission) {
+                player.carrying_honey = false
+                console.log("You delivered the yummy honey! " + player.location.character + " ate it all and passed out in a drunken stupor.")
+            } else {
+                console.log(player.location.character + " scolds you for making a mess! You sheepishly pick up the honey and apologize as you slowly backpedal out the door.")
+            }
+        }
+
+        function mission() {
+            player.mission = houses[Math.floor(Math.random() * houses.length)]
+            console.log("You've got to get the honey to " + player.mission.character + "'s house before it's too late!")
+        }
+
+        mission()
+
     
     </script>
 </head>
