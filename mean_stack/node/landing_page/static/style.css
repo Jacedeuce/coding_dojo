@@ -1,0 +1,32 @@
+
+.left {
+    display: inline-block;
+    width: 50%;
+}
+h1 {
+    margin-left: 33%;
+}
+.home {
+    float: right;
+    vertical-align: top;
+}
+
+label { 
+    width: 16%;
+    text-align: right;
+    display: inline-block;
+}
+
+input {
+    width: 33%;
+    padding: .2rem .4rem;
+    margin: .5rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+button {
+    margin-left: 17%;
+    margin-top: 1rem;
+}

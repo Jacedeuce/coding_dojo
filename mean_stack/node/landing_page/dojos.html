@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Dojo</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <h1>Add a new Dojo</h1>
+        </div>
+        <a href="/" class="home">Home</a>
+        <div class="main">
+            <form action="/dojo/create" method="POST">
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="input">
+            </div>
+            <div class="row">
+                <label for="state">State:</label>
+                <input type="text" name="state">
+            </div>
+            <div class="row">
+                <label for="lead">Lead Instructor:</label>
+                <input type="text" name="lead">
+            </div>
+            <div class="row">
+                <button type="submit">Create</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
