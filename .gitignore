@@ -1,6 +1,6 @@
 python_stack/my_environments
 *Env/
-
+*node_modules/
 # Compiled source #
 ###################
 *.com
