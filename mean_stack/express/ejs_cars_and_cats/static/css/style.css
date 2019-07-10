@@ -81,6 +81,17 @@ textarea {
     height: 150px;
 }
 
+.display {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc;
+    text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
 .right {
     line-height: 1.5rem;

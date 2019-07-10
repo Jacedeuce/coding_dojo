@@ -10,17 +10,24 @@
 <body>
     <div class="header">
         <h1>Cats</h1>
+        <div class="right">
+            <a href="/">Home</a>
+        </div>
     </div>
     <div class="main">
-        <div class="col-4">
-            <h2>Pictures of cats</h2>
-            <% for (let cat of cats) { %>
-                <div class="col">
-                    <h3><%= cat['name'] %></h3>
-                    <a href="/cats/<%= cat['id'] %>" ><img src="/images/cat<%= cat['id'] %>.gif" alt="cat gif"></a>
-                </div>
+        <div class="display">
+            <h1><%= cat['name'] %></h1>
+            <img src="/images/cat<%= cat['id'] %>.gif" alt="the cat">
+            <p>Age: <%= cat['age'] %></p>
+            <p>Favorite Foods: </p>
+            <ul>
+            <% for (let food of cat['fav_food']) { %>
+                <li><%= food %></li>
             <% } %>
+            </ul>
+
         </div>
+
     </div>
 </body>
 </html>
