@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cars</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Cars</h1>
+        <div class="right">
+            <a href="/cars/new">Add a new car.</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-3">
+            <h2>Pictures of cars</h2>
+            <% for (var i=1; i < 4; i++){ %>
+            <div class="col">
+                <img src="/images/old_car<%= i %>.jpg" alt="old car">
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

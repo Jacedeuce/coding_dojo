@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cats</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Cats</h1>
+    </div>
+    <div class="main">
+        <div class="col-4">
+            <h2>Pictures of cats</h2>
+            <% for (var i=1; i < 5; i++) { %>
+                <div class="col">
+                        <img src="/images/cat<%= i %>.gif" alt="cat gif">
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
