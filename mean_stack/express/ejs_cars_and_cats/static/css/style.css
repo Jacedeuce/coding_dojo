@@ -82,6 +82,7 @@ textarea {
 }
 
 @media only screen and (max-width: 600px) {
-  .right {
+.right {
     line-height: 1.5rem;
+}
 }
