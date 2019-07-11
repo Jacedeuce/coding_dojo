@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <h3>Submitted Information</h1>
+        </div>
+        <div class="row">
+            <span class="label">Name:</span>
+            <span class="details"><%= name %></span>
+        </div>
+        <div class="row">
+            <span class="label">Dojo Location:</span>
+            <span class="details"><%= location %></span>
+        </div>
+        <div class="row">
+            <span class="label">Favorite Language:</span>
+            <span class="details"><%= language %></span>
+        </div>
+        <div class="row">
+            <span class="label">Comment:</span>
+            <span class="details"><%= comment %></span>
+        </div>
+        <div class="row bottom">
+            <form action="/" method="GET">
+                <button>Go Back</button>
+            </form> 
+        </div>
+    </div>
+</body>
+</html>
