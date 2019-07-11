@@ -23,10 +23,10 @@ print(bubble(numlist))
 
 # def bubble2(numlist):
 #     for i in range()
+numlist = [5,2,8,6,9,2,6,8,10,7]
 
-
-def BubbleSort(A):
-    end = len(A)-1
+def BubbleSort(numlist):
+    end = len(numlist)-1
     swapped = True
     comps = 0
     swaps = 0
@@ -36,9 +36,9 @@ def BubbleSort(A):
         loop+=1
         for i in range(0, end):
             comps+=1
-            if A[i] > A[i+1]:
+            if numlist[i] > numlist[i+1]:
                 swaps+=1
-                A[i], A[i+1] = A[i+1], A[i]
+                numlist[i], numlist[i+1] = numlist[i+1], numlist[i]
                 swapped = True
         end -= 1
     print(swaps, comps, loop)
