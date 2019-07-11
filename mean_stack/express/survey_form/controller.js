@@ -5,7 +5,6 @@ module.exports = {
 
     result : (req, res)=>{
         if (req.method == 'POST'){
-            console.log(req.body)
             form = {
                 name: req.body.name,
                 location : req.body.location,
