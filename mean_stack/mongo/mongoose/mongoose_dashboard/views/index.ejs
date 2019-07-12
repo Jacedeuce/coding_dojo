@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beaver Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Look at all the Beavers</h1>
+        <div class="right">
+            <a href="/beavers/new">Create a Beaver</a>
+        </div>
+    </div>
+    <div class="messages">
+        <% if(messages.beavers) { %>
+            <% for (var x of messages.beavers) { %>
+                <h3><%= x %></h3>
+            <% } %>
+        <% } %>
+    </div>
+    <div class="main">
+        <% for (let beav of beavers) { %>
+        <div class="beaver">
+            <h3><%= beav.name %></h3>
+            <p>Tail Length: <%= beav.tail %> inches</p>
+            <p>Dam Maintained: <%= beav.dam %></p>
+            <a href="/beavers/<%= beav._id %>">Show</a>
+            <a href="/beavers/edit/<%=beav._id%>">Edit</a>
+            <a href="/beavers/destroy/<%= beav._id %>">Delete</a>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>

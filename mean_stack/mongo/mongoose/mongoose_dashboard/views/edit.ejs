@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beaver Dashboard</title>
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous">
+    </script>
+    <script>
+        $(function() {
+            $("#my-select").val("<%= beaver.dam %>")
+            console.log('executing beaver')
+        })
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Edit a Beaver</h1>
+        <div class="right">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <div class="messages">
+        <% if(messages.beavers) { %>
+            <% for (var x of messages.beavers) { %>
+                <h3><%= x %></h3>
+            <% } %>
+        <% } %>
+    </div>
+    <div class="main">
+        <form action="/beavers/<%= beaver._id %>" method="POST">
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="<%= beaver.name %>">
+            </div>
+            <div class="row">
+                <label for="tail">Tail Length:</label>
+                <input type="number" name="tail" value="<%= beaver.tail %>">
+                <span> inches</span>
+            </div>
+            <div class="row">
+                <label for="dam">Dam:</label>
+                <select name="dam" id="my-select">
+                    <option value="Hoover">Hoover</option>
+                    <option value="Three Gorges">Three Gorges</option>
+                    <option value="Monticello">Monticello</option>
+                    <option value="Gordon">Gordon</option>
+                    <option value="Itaipu">Itaipu</option>
+                </select>
+            </div>
+            <div class="row">
+                <button type="submit">Submit</button>
+            </div>
+            <input type="hidden" name="_id" value="<%= beaver._id %>">
+        </form>
+    </div>
+</body>
+</html>

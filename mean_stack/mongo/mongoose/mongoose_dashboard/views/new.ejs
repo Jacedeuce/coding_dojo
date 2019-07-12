@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beaver Dashboard</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Make a Beaver</h1>
+        <div class="right">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <div class="messages">
+        <% if(messages.beavers) { %>
+            <% for (var x of messages.beavers) { %>
+                <h3><%= x %></h3>
+            <% } %>
+        <% } %>
+    </div>
+    <div class="main">
+        <form action="/beavers" method="POST">
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+            </div>
+            <div class="row">
+                <label for="tail">Tail Length:</label>
+                <input type="number" name="tail">
+                <span> inches</span>
+            </div>
+            <div class="row">
+                <label for="dam">Dam:</label>
+                <select name="dam" id="">
+                    <option value="Hoover">Hoover</option>
+                    <option value="Three Gorges">Three Gorges</option>
+                    <option value="Monticello">Monticello</option>
+                    <option value="Gordon">Gordon</option>
+                    <option value="Itaipu">Itaipu</option>
+                </select>
+            </div>
+            <div class="row">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
