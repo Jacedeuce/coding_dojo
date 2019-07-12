@@ -13,6 +13,6 @@ function insertion_sort(arr){
     return arr
 }
 
-arr = [6,3,8,4,1,9,10,2,5]
+unsorted = [6,3,8,4,1,9,10,2,5]
 
-console.log(insertion_sort(arr))
+console.log(insertion_sort(unsorted))
