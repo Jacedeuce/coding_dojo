@@ -1,0 +1,61 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PokemonService {
+
+  constructor(private _http: HttpClient) { 
+    this.getPokemon().subscribe(data => {console.log(data)})
+        // )
+    //this.getSharedAbilities(temp.abilities)
+  }
+
+  getPokemon(){
+    var urls
+    let bulbasaur = this._http.get('https://pokeapi.co/api/v2/pokemon/1/')
+    
+    function titleCaseWord(word: string){
+      if (!word) return word;
+      return word[0].toUpperCase() + word.substr(1)
+    }
+    
+    function list_abilities(arr) {
+      var ability_string: String
+      ability_string = arr[0].ability.name
+      if (arr.length > 2){
+        for (let i=1; i<arr.length-1; i++) {
+        ability_string+= ', ' + arr[i].ability.name
+        }
+      }
+      if (arr.length === 2){
+        ability_string += " and " + arr[arr.length-1].ability.name
+      }
+      return ability_string
+    }
+
+    function parse_ability_urls(arr) {
+      let ability_nums: Array<String> = []
+      for (let abil of arr) {
+        ability_nums.push(abil.ability.url)
+      }
+      return ability_nums
+    }
+
+    bulbasaur.subscribe(data => {console.log(data);
+      console.log(`${titleCaseWord(data['name'])}'s abilities are ${list_abilities(data['abilities'])}.`)
+      urls = parse_ability_urls(data['abilities'])
+      
+    })
+  return urls
+
+  }
+
+  getSharedAbilities(ability_array){
+    for (let ability of ability_array) {
+      let tempObserver = this._http.get(ability.url)
+      tempObserver.subscribe(data => {console.log("Abilities:", data)})
+    }
+  }
+}
