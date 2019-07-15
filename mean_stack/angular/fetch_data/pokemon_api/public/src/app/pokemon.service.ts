@@ -10,9 +10,6 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 
-
-
-
 export class PokemonService {
 
   constructor(private _http: HttpClient) { 
@@ -95,4 +92,9 @@ export class PokemonService {
     }) 
       
   }
+}
+
+function titleCaseWord(word: string){
+  if (!word) return word;
+  return word[0].toUpperCase() + word.substr(1)
 }
