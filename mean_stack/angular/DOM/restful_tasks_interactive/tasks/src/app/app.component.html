@@ -17,7 +17,7 @@
 
   </form>
 </div>
-<div class="footer">
+<div *ngIf="one_task" class="footer">
   <p>{{one_task.title}} - {{one_task.description}}</p>
 </div>
 
