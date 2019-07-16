@@ -56,6 +56,7 @@ export class AppComponent {
             console.log(data)
             this.return_tasks()
         })
+        this.one_task = {title: "", description: "", id: ""}
     }
 
     delete_a_task(task_to_delete) {
