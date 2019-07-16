@@ -1,0 +1,11 @@
+div {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 25%;
+    margin: auto;
+    text-align: center;
+}
+
+.wrapper button {
+    margin-left: 10px;
+}
