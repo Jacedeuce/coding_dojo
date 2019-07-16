@@ -1,0 +1,31 @@
+div.header, div.new, div.main, div.edit {
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.column, .task-column  {
+    display: inline-block;
+}
+label {
+    display: inline-block;
+    width: 120px;
+}
+
+.edit {
+    margin-left: 10%;
+    vertical-align: top;
+}
+
+.rowed {
+    display: inline-grid;
+    grid-template-rows: 1em 2em 1em 2em;
+    vertical-align: top;
+}
+    
+.button-1 {
+    grid-row: 2;
+}
+
+.button-2 {
+    grid-row: 4;
+}
