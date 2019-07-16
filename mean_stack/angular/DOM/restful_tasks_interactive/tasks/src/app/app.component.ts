@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TasksService } from './tasks.service'
 
 @Component({
@@ -6,7 +6,7 @@ import { TasksService } from './tasks.service'
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     title = 'tasks';
     tasks : Array<object>
     one_task : object
