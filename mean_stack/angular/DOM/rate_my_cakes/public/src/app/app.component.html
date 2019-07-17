@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ title }}</title>
+</head>
+<body> 
+    <div class="header">
+        <h1>Rate my cakes</h1>
+    </div>
+    <div class="top">
+        <div class="form">
+            <form (submit)=bake()>
+                <h1>Submit a cake to be rated</h1>
+                <div class="row">
+                    <label for="full_name">Baker Name:</label>
+                    <input type="text" name="full_name" [(ngModel)]="new_cake.full_name">
+                </div>
+                <div class="class">
+                    <label for="name">Cake Name:</label>
+                    <input type="text" name="name" [(ngModel)]="new_cake.name">
+                </div>
+                <div class="row">
+                    <label for="image_url">Image URL:</label>
+                    <input type="text" name="image_url" [(ngModel)]="new_cake.image_url">
+                </div>
+                <div class="row">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="list">
+          <div class="col-1">
+            <div *ngFor="let cake of cakes" class="cake">
+              <!-- {{ cake | json }} -->
+                <img src="{{cake['image_url']}}" alt="{{cake['image_url']}}">
+                <app-cake *ngIf="cake" [cake_to_show]="cake" (rating_emitter)="get_rating_from_child($event, cake._id)"></app-cake>
+            </div>
+          </div>
+        </div>  
+    </div>
+</body>
+</html>

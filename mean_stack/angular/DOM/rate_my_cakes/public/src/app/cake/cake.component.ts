@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-// import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-cake',
@@ -7,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./cake.component.css']
 })
 export class CakeComponent implements OnInit {
-  @Input() cakes_to_show: any;
+  @Input() cake_to_show: any;
   @Output() rating_emitter = new EventEmitter();
   new_rating: any
   constructor() { }
@@ -21,5 +20,3 @@ export class CakeComponent implements OnInit {
   }
 
 }
-
-

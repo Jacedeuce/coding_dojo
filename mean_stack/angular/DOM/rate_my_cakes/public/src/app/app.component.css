@@ -1,0 +1,32 @@
+div.top {
+    display: grid;
+    grid-template-columns: 25% 25%;
+}
+
+div.form, div.list {
+    display: inline-block;
+    vertical-align: top;
+}    
+
+div.col-1 {
+    display: block;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+div.cake {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    vertical-align: top;
+}
+
+div.list img {
+    width: 150px;
+    height: 150px;
+}
+
+div.col {
+    display: inline-grid;
+    grid-template-rows: 2em 4em 2em;
+    vertical-align: top;
+}
