@@ -1,11 +1,9 @@
-<form>
-    <div class="col">
-        <!-- {{ cake_to_show._id | json }} -->
-        <select name="new-rating" [(ngModel)]="new_rating.stars">
-            <option *ngFor="let star of [1,2,3,4,5]" value="{{star}}">{{star}} Stars</option>
-        </select>
-        <textarea name="comment" [(ngModel)]="new_rating.comment"></textarea>
-        <input type="hidden" name="cake_id" [(ngModel)]="cake_to_show._id">
-        <button (click)=send_rating_to_parent($event)>Rate!</button>
+<div class="one-cake">
+    <img src="{{one_cake_to_show.image_url}}" alt="cake image">
+    <div class="col-2">
+        <h3>{{one_cake_to_show.name}}</h3>
+        <div class="ratings">
+            <p *ngFor="let rating of one_cake_to_show.ratings"><span class="bold">{{rating.stars}} Stars</span> - {{rating.comment}}</p>
+        </div>
     </div>
-</form>
+</div>

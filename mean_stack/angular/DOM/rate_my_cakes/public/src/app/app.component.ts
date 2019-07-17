@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   one_cake : object
   new_cake : any
   new_rating : any
+  baker : any
 
   constructor(private _cakesService: CakesService){}
 
@@ -36,11 +37,20 @@ export class AppComponent implements OnInit {
     })
   }
 
+  get_a_cake(id) {
+    let observable = this._cakesService.get_one_cake(id)
+    observable.subscribe(data => {
+      this.one_cake = data['cake']
+      this.baker = data['baker']
+    })
+  }
+
   get_rating_from_child(formData, cake_id) {
     let observable = this._cakesService.make_rating(formData, cake_id)
     observable.subscribe(data => {
+      this.get_a_cake(cake_id)
       console.log("rating stored")
-      console.log(data)
+      // console.log(data)
     })
   }
 }

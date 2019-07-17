@@ -8,6 +8,7 @@ module.exports = {
             } else {
                 res.json({ 'cakes' : all_cakes })
             }
+            // .then(data => res.json(info:data))
         })
     },
     show_cake : (req, res) => {
@@ -15,7 +16,13 @@ module.exports = {
             if (err) {
                 console.log(err)
             } else {
-                res.json({ 'cake' : cake })
+                Models.Baker.findOne({ 'cakes._id' : req.params.id}, function(err, baker){
+                    if(err) {
+                        console.log(err)
+                    } else {
+                        res.json({ 'cake': cake, 'baker': baker})
+                    }
+                })
             }
         })
     },

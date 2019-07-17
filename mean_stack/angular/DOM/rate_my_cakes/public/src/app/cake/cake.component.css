@@ -1,5 +1,16 @@
-div.col {
-    display: inline-grid;
-    grid-template-rows: 2em 4em 2em;
+div.col-2 {
+    display: inline-block;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.col-2 {
     vertical-align: top;
+}
+
+.bold {
+    font-weight: bold;
 }

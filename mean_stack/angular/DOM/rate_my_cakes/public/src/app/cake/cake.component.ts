@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-cake',
@@ -6,17 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./cake.component.css']
 })
 export class CakeComponent implements OnInit {
-  @Input() cake_to_show: any;
-  @Output() rating_emitter = new EventEmitter();
-  new_rating: any
+  @Input() one_cake_to_show : any
+
   constructor() { }
 
   ngOnInit() {
-    this.new_rating = { stars : "", comment : "Type your comment here..."}
-  }
-
-  send_rating_to_parent() {
-    this.rating_emitter.emit(this.new_rating)
   }
 
 }

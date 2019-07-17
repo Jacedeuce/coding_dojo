@@ -4,12 +4,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { CakesService } from './cakes.service';
-import { CakeComponent } from './cake/cake.component'
+import { CakeComponent } from './cake/cake.component';
+import { RatingComponent } from './rating/rating.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CakeComponent
+    CakeComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

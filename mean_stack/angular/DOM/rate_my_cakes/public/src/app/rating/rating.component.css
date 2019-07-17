@@ -1,0 +1,5 @@
+div.col {
+    display: inline-grid;
+    grid-template-rows: 2em 4em 2em;
+    vertical-align: top;
+}

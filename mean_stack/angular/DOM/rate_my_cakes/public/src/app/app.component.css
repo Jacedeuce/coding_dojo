@@ -1,12 +1,23 @@
+body {
+    width: 800px;
+    margin: auto;
+}
+
 div.top {
     display: grid;
-    grid-template-columns: 25% 25%;
+    grid-template-columns: 50% 50%;
 }
 
 div.form, div.list {
     display: inline-block;
     vertical-align: top;
 }    
+
+div.form label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
 
 div.col-1 {
     display: block;
@@ -18,6 +29,7 @@ div.cake {
     display: grid;
     grid-template-columns: 150px 150px;
     vertical-align: top;
+    margin-bottom: 20px;
 }
 
 div.list img {
