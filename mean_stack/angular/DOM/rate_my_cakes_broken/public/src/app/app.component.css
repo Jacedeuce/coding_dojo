@@ -1,0 +1,21 @@
+
+
+div.form, div.list {
+    display: inline-block;
+    vertical-align: top;
+}    
+
+div.list {
+    overflow-y: scroll;
+}
+
+div.list img {
+    width: 150px;
+    height: 150px;
+}
+
+div.col {
+    display: inline-grid;
+    grid-template-rows: 2em 4em 2em;
+    vertical-align: top;
+}

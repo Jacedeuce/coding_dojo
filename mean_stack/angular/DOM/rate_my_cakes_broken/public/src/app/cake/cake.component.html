@@ -1,0 +1,9 @@
+<form (submit)=rate(cake._id)>
+    <div class="col">
+        <select name="new-rating" [(ngModel)]="new_rating.stars">
+            <option *ngFor="let star of [1,2,3,4,5]" value="{{star}}">{{star}} Stars</option>
+        </select>
+        <textarea name="comment" [(ngModel)]="new_rating.comment"></textarea>
+        <button (click)=send_rating_to_parent($event)>Rate!</button>
+    </div>
+</form>
