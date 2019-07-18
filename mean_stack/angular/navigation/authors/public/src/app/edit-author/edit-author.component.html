@@ -1,0 +1,24 @@
+<a [routerLink]="['/view']">Home</a>
+
+<h3>Edit this author:</h3>
+
+<p *ngIf="!name.valid" class="red">Please update with a name that is at least 3 characters long.</p>
+<p *ngIf="name.valid">Nice name!</p>
+
+<div class="form">
+    <form (submit)="update_author()">
+        <label for="name">Name:</label>
+        <input 
+            type="text"
+            name="name" 
+            required
+            [(ngModel)]="author_to_update.name"
+            minlength = '3'
+            #name="ngModel"
+        >
+        <div class="buttons">
+            <button [routerLink]="['/viw']">Cancel</button>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</div>

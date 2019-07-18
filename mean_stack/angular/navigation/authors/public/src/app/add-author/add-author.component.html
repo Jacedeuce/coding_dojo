@@ -1,0 +1,25 @@
+<a [routerLink]="['/view']">Home</a>
+
+<h3>Add a new author:</h3>
+
+<p *ngIf="!name.valid" class="red">Please enter a name that is at least 3 characters long.</p>
+<p *ngIf="name.valid">Nice name!</p>
+
+
+<div class="form">
+    <form (submit)="make_author()">
+        <label for="name">Name:</label>
+        <input 
+            type="text" 
+            name="name"
+            required 
+            [(ngModel)]="new_author.name"
+            minlength = '3'
+            #name="ngModel"
+        />
+        <div class="buttons">
+            <button [routerLink]="['/view']">Cancel</button>
+            <button type="submit">Create</button>
+        </div>
+    </form>
+</div>
